@@ -1,0 +1,23 @@
+.sidenav {
+  position: fixed;
+  padding: 60px 20px 20px;
+  background-color: #132848;
+  color: white;
+  align-items: flex-end;
+}
+
+.material-symbols-outlined {
+  color: white;
+  font-variation-settings: 'FILL' 0,
+  'wght' 700,
+  'GRAD' 200,
+  'opsz' 48
+}
+
+.sidenav-icons {
+  display: flex;
+}
+
+.sidenav-descriptions {
+  padding-left: 1em;
+}
