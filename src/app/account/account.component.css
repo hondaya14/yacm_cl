@@ -1,0 +1,20 @@
+
+.card {
+  margin: 0 0 10px;
+}
+
+.card-header {
+  display: flex;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0,
+  'wght' 700,
+  'GRAD' 200,
+  'opsz' 48;
+  font-size: 50px;
+}
+
+.grid-list {
+  background-color: #95a8be;
+}

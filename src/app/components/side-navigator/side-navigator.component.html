@@ -1,13 +1,22 @@
 <mat-drawer class="sidenav" mode="side" opened="true">
-  <!-- Expanded Icon -->
-  <p *ngIf="!expanded"><span (click)="expanded = !expanded" class="material-symbols-outlined">start</span></p>
-  <p *ngIf="expanded"><span (click)="expanded = !expanded" style="transform: scale(-1, 1);"
-                            class="material-symbols-outlined">start</span></p>
-
   <!-- Account Icon -->
-  <div class="sidenav-icons">
-    <span class="material-symbols-outlined">person</span>
-    <p *ngIf="expanded" class="sidenav-descriptions"><b>Account</b></p>
-  </div>
+  <div class="sidenav-items">
+    <a routerLink="home" class="sidenav-item">
+      <span class="material-symbols-outlined">home</span>
+      <span *ngIf="expanded" class="sidenav-descriptions"><b>Home</b></span>
+    </a>
 
+    <a routerLink="account" class="sidenav-item">
+      <span class="material-symbols-outlined">person</span>
+      <span *ngIf="expanded" class="sidenav-descriptions"><b>Account</b></span>
+    </a>
+
+    <!-- Expanded Icon -->
+    <div class="expanded">
+      <span *ngIf="!expanded" (click)="expanded = !expanded"
+            class="material-symbols-outlined expanded_icon">start</span>
+      <span *ngIf="expanded" (click)="expanded = !expanded" style="transform: scale(-1, 1);"
+            class="material-symbols-outlined expanded_icon">start</span>
+    </div>
+  </div>
 </mat-drawer>

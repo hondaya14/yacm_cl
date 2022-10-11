@@ -14,8 +14,12 @@ import {MatSliderModule} from "@angular/material/slider";
 import {MatSidenavModule} from "@angular/material/sidenav"
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatFormFieldModule} from "@angular/material/form-field"
+import {MatGridListModule} from "@angular/material/grid-list";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { SideNavigatorComponent } from './components/side-navigator/side-navigator.component';
+import {SideNavigatorComponent} from './components/side-navigator/side-navigator.component';
+import {AccountComponent} from './account/account.component';
+import {TemplateComponent} from './template/template.component';
+import {MatCardModule} from "@angular/material/card";
 
 // @ts-ignore
 @NgModule({
@@ -24,6 +28,8 @@ import { SideNavigatorComponent } from './components/side-navigator/side-navigat
     PageNotFoundComponent,
     HomeComponent,
     SideNavigatorComponent,
+    AccountComponent,
+    TemplateComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +44,9 @@ import { SideNavigatorComponent } from './components/side-navigator/side-navigat
     MatCheckboxModule,
     FormsModule,
     ReactiveFormsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatGridListModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
