@@ -7,4 +7,5 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
   title = 'Yasunaga Lab computer manager';
+  expanded: any = false;
 }

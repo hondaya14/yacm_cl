@@ -8,7 +8,28 @@
 </div>
 
 <mat-drawer-container class="sidenav-container" autosize>
-  <app-side-navigator></app-side-navigator>
+  <mat-drawer class="sidenav" mode="side" opened="true">
+    <div class="sidenav-items">
+      <!-- Home icon-->
+      <a routerLink="home" class="sidenav-item">
+        <span class="material-symbols-outlined">home</span>
+        <span *ngIf="expanded" class="sidenav-descriptions"><b>Home</b></span>
+      </a>
+      <!-- Account icon -->
+      <a routerLink="account" class="sidenav-item">
+        <span class="material-symbols-outlined">person</span>
+        <span *ngIf="expanded" class="sidenav-descriptions"><b>Account</b></span>
+      </a>
+
+      <!-- Expanded icon -->
+      <div class="expanded">
+        <span *ngIf="!expanded" (click)="expanded = !expanded"
+              class="material-symbols-outlined expanded_icon">start</span>
+        <span *ngIf="expanded" (click)="expanded = !expanded" style="transform: scale(-1, 1);"
+              class="material-symbols-outlined expanded_icon">start</span>
+      </div>
+    </div>
+  </mat-drawer>
   <div class="main-contents">
     <router-outlet></router-outlet>
   </div>

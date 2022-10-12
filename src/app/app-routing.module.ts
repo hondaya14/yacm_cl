@@ -4,19 +4,22 @@ import {AccountComponent} from "./account/account.component";
 import {HomeComponent} from "./home/home.component";
 import {TemplateComponent} from "./template/template.component";
 import {PageNotFoundComponent} from "./error/page-not-found/page-not-found.component";
+import {RegisterCsComponent} from "./account/register-cs/register-cs.component";
+import {RegisterMailComponent} from "./account/register-mail/register-mail.component";
 
 const routes: Routes = [
   // Routes
   {path: 'home', component: HomeComponent},
   {path: 'account', component: AccountComponent},
+  {path: 'account/register_cs', component: RegisterCsComponent},
+  {path: 'account/register_mail', component: RegisterMailComponent},
   // template (not need for contents)
   {path: 'template', component: TemplateComponent},
-  // undefined path
-  {path: '**', component: PageNotFoundComponent},
 
-  // Redirect
-  // /(root) -> /home
-  {path: '', redirectTo: '/home', pathMatch: 'full'}
+  // redirect: /(root) -> /home
+  {path: '', redirectTo: '/home', pathMatch: 'full'},
+  // undefined path 404
+  {path: '**', component: PageNotFoundComponent},
 ]
 
 @NgModule({

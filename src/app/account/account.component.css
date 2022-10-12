@@ -1,6 +1,28 @@
 
+.account-title {
+  display: flex;
+  align-items: center;
+}
+
+.title-symbol {
+}
+
+.title {
+  padding-left: 1em;
+}
+
+.card-list {
+  display: flex;
+}
+
 .card {
-  margin: 0 0 10px;
+  margin: 10px;
+  max-width: 350px;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
 }
 
 .card-header {
@@ -15,6 +37,3 @@
   font-size: 50px;
 }
 
-.grid-list {
-  background-color: #95a8be;
-}

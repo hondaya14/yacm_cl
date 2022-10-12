@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SideNavigatorComponent } from './side-navigator.component';
+import { RegisterMailComponent } from './register-mail.component';
 
-describe('SideNavigatorComponent', () => {
-  let component: SideNavigatorComponent;
-  let fixture: ComponentFixture<SideNavigatorComponent>;
+describe('RegisterMailComponent', () => {
+  let component: RegisterMailComponent;
+  let fixture: ComponentFixture<RegisterMailComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SideNavigatorComponent ]
+      declarations: [ RegisterMailComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SideNavigatorComponent);
+    fixture = TestBed.createComponent(RegisterMailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

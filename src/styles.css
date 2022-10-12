@@ -7,7 +7,17 @@ html, body {
 
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  /*font-family: Roboto, "Helvetica Neue", sans-serif;*/
+  font-family: "Noto Sans JP", "Helvetica Neue", sans-serif;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+}
 
+/* select uncolorize */
+a, a:hover, a:visited {
+  color: white;
+  text-decoration: none;
+}

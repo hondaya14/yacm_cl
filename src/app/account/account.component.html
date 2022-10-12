@@ -1,17 +1,39 @@
-<mat-card class="card">
-  <div class="card-header">
-    <span class="material-symbols-outlined">person_add</span>
+<div class="account-title">
+  <span class="material-symbols-outlined title-symbol">person_add</span>
+  <h1 class="title">アカウント作成</h1>
+</div>
+<br>
+<div class="card-list">
+  <a routerLink="register_mail">
+    <mat-card class="card">
+      <div class="card-header">
+        <span class="material-symbols-outlined">mail</span>
 
-    <mat-card-header>
-      <mat-card-title>メールアカウント作成</mat-card-title>
-      <mat-card-subtitle>安永研メールアドレスの作成</mat-card-subtitle>
-    </mat-card-header>
-  </div>
+        <mat-card-header>
+          <mat-card-title>メールアカウント作成</mat-card-title>
+          <mat-card-subtitle>安永研メールアドレスの作成</mat-card-subtitle>
+        </mat-card-header>
+      </div>
 
-  <mat-card-content>
-    <span class="material-symbols-outlined">mail</span>
-    
-  </mat-card-content>
-</mat-card>
+      <mat-card-content>
+        @mail.yasunaga-lab.kyutech.ac.jpのメールアドレスを発行します。
+      </mat-card-content>
+    </mat-card>
+  </a>
+  <a routerLink="register_cs">
+    <mat-card class="card">
+      <div class="card-header">
+        <span class="material-symbols-outlined">dns</span>
 
+        <mat-card-header>
+          <mat-card-title>計算機アカウント作成</mat-card-title>
+          <mat-card-subtitle>CSマシン（LDAPアカウント）の作成</mat-card-subtitle>
+        </mat-card-header>
+      </div>
 
+      <mat-card-content>
+        @mail.yasunaga-lab.kyutech.ac.jpのメールアドレスを発行します。
+      </mat-card-content>
+    </mat-card>
+  </a>
+</div>
