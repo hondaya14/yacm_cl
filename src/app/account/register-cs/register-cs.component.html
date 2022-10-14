@@ -7,6 +7,9 @@
   <br>
   <div class="account-form">
     <h3>フォームに入力してください</h3>
+    <div *ngIf="infoInvalid" class="error-message">
+      <p>不正な箇所があります。</p>
+    </div>
     <div class="form-container">
       <table class="form-table">
         <tr>
@@ -14,14 +17,14 @@
             <p>姓</p>
             <mat-form-field hintLabel="ex) YASUNAGA" appearance="fill">
               <mat-label>Last name</mat-label>
-              <input matInput [(ngModel)]="ldap.lastName">
+              <input matInput [(ngModel)]="ldap.lastName" required>
             </mat-form-field>
           </td>
           <td>
             <p>名</p>
             <mat-form-field hintLabel="ex) Takuo" appearance="fill">
               <mat-label>First name</mat-label>
-              <input matInput [(ngModel)]="ldap.firstName">
+              <input matInput [(ngModel)]="ldap.firstName" required>
             </mat-form-field>
           </td>
         </tr>
@@ -30,16 +33,16 @@
             <p>アカウント名</p>
             <mat-form-field hintLabel="ex) tacyas" appearance="fill">
               <mat-label>Account name</mat-label>
-              <input matInput #input [(ngModel)]="ldap.accountName">
+              <input matInput #input [(ngModel)]="ldap.accountName" required>
             </mat-form-field>
           </td>
         </tr>
         <tr>
           <td>
             <p>パスワード</p>
-            <mat-form-field appearance="fill">
+            <mat-form-field hintLabel="英数字・記号を含む8文字以上" appearance="fill">
               <mat-label>Password</mat-label>
-              <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="ldap.password">
+              <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="ldap.password" required>
               <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
                       [attr.aria-pressed]="hide">
                 <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
@@ -47,9 +50,10 @@
             </mat-form-field>
           </td>
         </tr>
+        <br>
         <tr class="button-area">
           <td colspan="2">
-            <button mat-raised-button class="register-button">登録</button>
+            <button mat-raised-button class="register-button" (click)="register()">登録</button>
           </td>
         </tr>
       </table>

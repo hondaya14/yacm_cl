@@ -14,3 +14,7 @@
 .title {
   padding-left: 1em;
 }
+
+.error-message {
+  color: red;
+}
