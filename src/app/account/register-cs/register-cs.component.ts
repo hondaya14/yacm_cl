@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {AccountService} from "../account.service";
 
 
 @Component({
@@ -12,7 +12,7 @@ export class RegisterCsComponent implements OnInit {
   infoInvalid: boolean = false;
   hide: boolean = true;
 
-  constructor(private http: HttpClient) {
+  constructor(private accountService: AccountService) {
   }
 
   ngOnInit(): void {
@@ -26,9 +26,9 @@ export class RegisterCsComponent implements OnInit {
   register() {
     this.infoInvalid = !this.ldap.checkInfo();
     if (this.infoInvalid) return
-    let endpoint: string = 'register_cs'
-    let url: string = 'http://localhost:4000' + endpoint;
-    this.http.post(url, JSON.stringify(this.ldap));
+    this.accountService.registerCS(JSON.stringify(this.ldap)).subscribe(result => console.log(result));
+    // console.log('post: ' + url + '\nbody:' + '\n' + JSON.stringify(this.ldap), option);
+    // this.http.post(url, JSON.stringify(this.ldap));
   }
 }
 
