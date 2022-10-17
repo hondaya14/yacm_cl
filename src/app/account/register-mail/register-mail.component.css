@@ -18,3 +18,13 @@
 .error-message {
   color: red;
 }
+
+.form-table {
+  /*padding: 20px;*/
+  border-spacing: 10px 15px;
+  justify-content: center;
+}
+
+.button-area {
+  text-align: center;
+}

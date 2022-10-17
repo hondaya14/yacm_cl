@@ -6,8 +6,6 @@
   font-size: 50px;
 }
 
-.account {
-}
 
 .account-title {
   display: flex;
@@ -18,18 +16,10 @@
   padding-left: 1em;
 }
 
-.account-form {
-  width: 100%;
-}
-
 .error-message {
   color: red;
 }
 
-.form-container {
-  margin-left: auto;
-  margin-right: auto;
-}
 
 .form-table {
   /*padding: 20px;*/
@@ -37,13 +27,6 @@
   justify-content: center;
 }
 
-.table-row {
-
-}
-
-.register-button {
-
-}
 
 .button-area {
   text-align: center;

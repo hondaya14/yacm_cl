@@ -10,14 +10,14 @@
     <div *ngIf="infoInvalid" class="error-message">
       <p>不正な箇所があります。</p>
     </div>
-    <div class="form-container">
+    <div>
       <table class="form-table">
         <tr>
           <td>
             <p>ユーザー名</p>
             <mat-form-field hintLabel="ex) tacyas" appearance="fill">
               <mat-label>Account name</mat-label>
-              <input matInput [(ngModel)]="mail.userName">
+              <input matInput [(ngModel)]="mail.userName" required>
             </mat-form-field>
           </td>
         </tr>
@@ -35,8 +35,9 @@
           </td>
         </tr>
         <br>
+        <br>
         <tr class="button-area">
-          <td colspan="2">
+          <td>
             <button mat-raised-button class="register-button" (click)="register()">登録</button>
           </td>
         </tr>
