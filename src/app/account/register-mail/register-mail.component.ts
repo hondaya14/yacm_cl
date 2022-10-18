@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {AccountService} from "../account.service";
 
 @Component({
   selector: 'app-register-mail',
@@ -11,7 +11,7 @@ export class RegisterMailComponent implements OnInit {
   mail: MailAccountInfo = new MailAccountInfo();
   infoInvalid: boolean = false;
 
-  constructor(private http: HttpClient) {
+  constructor(private accountService: AccountService) {
   }
 
   ngOnInit(): void {
@@ -21,12 +21,11 @@ export class RegisterMailComponent implements OnInit {
     console.log();
   }
 
+  // Register process
   register() {
     this.infoInvalid = !this.mail.checkInfo();
     if (this.infoInvalid) return
-    let endpoint: string = 'register_cs'
-    let url: string = 'http://localhost:4000' + endpoint;
-    this.http.post(url, JSON.stringify(this.mail));
+    this.accountService.registerCS(JSON.stringify(this.mail)).subscribe(result => console.log(result));
   }
 }
 
