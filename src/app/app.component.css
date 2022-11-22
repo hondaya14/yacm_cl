@@ -38,6 +38,11 @@ h6 {
 
 .sidenav-container {
   height: 100%;
+  background-image: url(../assets/images/tacyas_background.png);
+  background-size: 30%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #f6f6f6;
 }
 
 .sidenav {

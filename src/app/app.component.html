@@ -20,6 +20,27 @@
         <span class="material-symbols-outlined">person</span>
         <span *ngIf="expanded" class="sidenav-descriptions"><b>Account</b></span>
       </a>
+      <!-- CS Monitor icon -->
+      <a routerLink="under-development" class="sidenav-item">
+        <span class="material-symbols-outlined">analytics</span>
+        <span *ngIf="expanded" class="sidenav-descriptions"><b>CS Monitor</b></span>
+      </a>
+      <!-- Lan map icon -->
+      <a routerLink="under-development" class="sidenav-item">
+        <span class="material-symbols-outlined">lan</span>
+        <span *ngIf="expanded" class="sidenav-descriptions"><b>Lan map</b></span>
+      </a>
+      <!-- Description icon -->
+      <a routerLink="under-development" class="sidenav-item">
+        <span class="material-symbols-outlined">description</span>
+        <span *ngIf="expanded" class="sidenav-descriptions"><b>Description</b></span>
+      </a>
+
+      <!-- Related site icon -->
+      <a routerLink="under-development" class="sidenav-item">
+        <span class="material-symbols-outlined">open_in_new</span>
+        <span *ngIf="expanded" class="sidenav-descriptions"><b>Related Site</b></span>
+      </a>
 
       <!-- Expanded icon -->
       <div class="expanded">
@@ -30,6 +51,7 @@
       </div>
     </div>
   </mat-drawer>
+  <app-loading></app-loading>
   <div class="main-contents">
     <router-outlet></router-outlet>
   </div>
