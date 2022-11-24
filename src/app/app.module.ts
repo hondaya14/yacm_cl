@@ -12,7 +12,9 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatSliderModule} from "@angular/material/slider";
 import {MatSelectModule} from "@angular/material/select";
 import {MatSidenavModule} from "@angular/material/sidenav";
+import {MatExpansionModule} from '@angular/material/expansion';
 import {MatInputModule} from "@angular/material/input";
+import {MatListModule} from "@angular/material/list";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
@@ -26,6 +28,7 @@ import {UnderDevelopmentComponent} from './under-development/under-development.c
 import {LoadingComponent} from './components/loading/loading.component';
 import {LoadingService} from "./components/loading/loading.service";
 import {LoadingInterceptor} from "./components/loading/loading.interceptor";
+import {RelatedSitesComponent} from './related-sites/related-sites.component';
 
 // @ts-ignore
 @NgModule({
@@ -39,6 +42,7 @@ import {LoadingInterceptor} from "./components/loading/loading.interceptor";
     RegisterCsComponent,
     UnderDevelopmentComponent,
     LoadingComponent,
+    RelatedSitesComponent,
   ],
   imports: [
     HttpClientModule,
@@ -48,6 +52,8 @@ import {LoadingInterceptor} from "./components/loading/loading.interceptor";
     MatIconModule,
     MatMenuModule,
     MatButtonModule,
+    MatExpansionModule,
+    MatListModule,
     MatToolbarModule,
     MatSliderModule,
     MatSidenavModule,

@@ -7,6 +7,7 @@ import {PageNotFoundComponent} from "./error/page-not-found/page-not-found.compo
 import {RegisterCsComponent} from "./account/register-cs/register-cs.component";
 import {RegisterMailComponent} from "./account/register-mail/register-mail.component";
 import {UnderDevelopmentComponent} from "./under-development/under-development.component";
+import {RelatedSitesComponent} from "./related-sites/related-sites.component";
 
 const routes: Routes = [
   // Routes
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: 'account', component: AccountComponent},
   {path: 'account/register_cs', component: RegisterCsComponent},
   {path: 'account/register_mail', component: RegisterMailComponent},
+  {path: 'related-sites', component: RelatedSitesComponent},
   {path: 'under-development', component: UnderDevelopmentComponent},
   // template (not need for contents)
   {path: 'template', component: TemplateComponent},
