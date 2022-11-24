@@ -23,7 +23,7 @@ h6 {
 
 .title-bar {
   z-index: 10000;
-  border-bottom: 1px solid #003;
+  border-bottom: 1px solid #06C755;
   position: absolute;
   top: 0;
   left: 0;
@@ -31,8 +31,8 @@ h6 {
   height: 50px;
   displays: flex;
   align-items: center;
-  background-color: #132848;
-  color: #fcda6d;
+  background-color: #06C755;
+  color: #fff;
   font-weight: 600;
 }
 
@@ -48,7 +48,7 @@ h6 {
 .sidenav {
   position: fixed;
   padding: 60px 5px 5px;
-  background-color: #132848;
+  background-color: #06C755;
   color: white;
   align-items: center;
 }
