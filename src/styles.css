@@ -7,8 +7,6 @@ html, body {
 
 body {
   margin: 0;
-  /*font-family: Roboto, "Helvetica Neue", sans-serif;*/
-  font-family: "Noto Sans JP", "Helvetica Neue", sans-serif;
 }
 
 * {
@@ -20,4 +18,14 @@ body {
 a, a:hover, a:visited {
   color: white;
   text-decoration: none;
+}
+
+/* font */
+@font-face {
+  font-family: 'LINE';
+  src: url('assets/font/LINE_Seed_JP/Desktop/OTF/LINESeedJP_OTF_Bd.otf') format('opentype');
+}
+
+* {
+  font-family: 'LINE', serif;
 }
