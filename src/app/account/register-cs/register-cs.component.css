@@ -31,3 +31,7 @@
 .button-area {
   text-align: center;
 }
+
+.register-button {
+  width: 100px;
+}

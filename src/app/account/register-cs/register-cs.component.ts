@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AccountService} from "../account.service";
+import {FormControl, Validators} from "@angular/forms";
 
 
 @Component({
@@ -24,42 +25,70 @@ export class RegisterCsComponent implements OnInit {
   }
 
   register() {
-    this.infoInvalid = !this.ldap.checkInfo();
+    this.infoInvalid = this.ldap.invalidLdapForms();
     if (this.infoInvalid) return
-    this.accountService.registerCS(JSON.stringify(this.ldap)).subscribe(result => console.log(result));
+    this.accountService.registerCS(this.ldap.jsonify()).subscribe(result => console.log(result));
     // console.log('post: ' + url + '\nbody:' + '\n' + JSON.stringify(this.ldap), option);
     // this.http.post(url, JSON.stringify(this.ldap));
   }
 }
 
 class LdapInfo {
+
+  lastName = new FormControl('', [Validators.required, Validators.pattern(/^[A-Z]+$/)]);
+  firstName = new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z]+$/)]);
+  accountName = new FormControl('', [Validators.required, Validators.pattern(/^[0-9a-zA-Z]+$/)]);
+  password = new FormControl('', [Validators.pattern(/^(?=.*?[a-zA-Z])(?=.*?\d)[a-zA-Z\d]{8,}$/)]);
+
+  invalidLdapForms(): boolean {
+    return this.lastName.invalid || this.firstName.invalid || this.accountName.invalid || this.password.invalid
+  }
+
+  get lastNameError() {
+    if (this.lastName.hasError('required')) {
+      return '入力してください';
+    }
+    return this.lastName.hasError('pattern') ? '全て大文字英字で入力してください' : '';
+  }
+
+  get firstNameError() {
+    if (this.firstName.hasError('required')) {
+      return '入力してください';
+    }
+    return this.firstName.hasError('pattern') ? '全て英字で入力してください' : '';
+  }
+
+  get accountNameError() {
+
+    if (this.accountName.hasError('required')) {
+      return '入力してください';
+    }
+    return this.accountName.hasError('pattern') ? '全て英数字で入力してください' : '';
+  }
+
+  get passwordError() {
+    if (this.password.hasError('required')) {
+      return '入力してください';
+    }
+    return this.password.hasError('pattern') ? '英数字・記号を含む8文字以上' : '';
+  }
+
+  jsonify() {
+    return JSON.stringify(new LdapModel(this.lastName.value!, this.firstName.value!, this.accountName.value!, this.password.value!));
+  }
+
+}
+
+class LdapModel {
   lastName: string;
   firstName: string;
   accountName: string;
   password: string;
 
-  constructor() {
-    this.lastName = '';
-    this.firstName = '';
-    this.accountName = '';
-    this.password = '';
-  }
-
-  checkInfo() {
-    return this.checkName(this.lastName)
-      && this.checkName(this.firstName)
-      && this.checkName(this.accountName)
-      && this.lastName.length > 0 && this.firstName.length > 0 && this.accountName.length > 0
-      && this.checkPassword();
-  }
-
-  checkName(checkStr: string) {
-    const re = new RegExp(/^[0-9a-zA-Z]+$/);
-    return re.test(checkStr);
-  }
-
-  checkPassword() {
-    const re = new RegExp(/^(?=.*?[a-zA-Z])(?=.*?\d)[a-zA-Z\d]{8,}$/);
-    return re.test(this.password);
+  constructor(lastName: string, firstName: string, accountName: string, password: string) {
+    this.lastName = lastName;
+    this.firstName = firstName;
+    this.accountName = accountName;
+    this.password = password;
   }
 }
