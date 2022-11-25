@@ -29,6 +29,8 @@ import {LoadingComponent} from './components/loading/loading.component';
 import {LoadingService} from "./components/loading/loading.service";
 import {LoadingInterceptor} from "./components/loading/loading.interceptor";
 import {RelatedSitesComponent} from './related-sites/related-sites.component';
+import { CsMonitoringComponent } from './cs-monitoring/cs-monitoring.component';
+import { LanMapComponent } from './lan-map/lan-map.component';
 
 // @ts-ignore
 @NgModule({
@@ -43,6 +45,8 @@ import {RelatedSitesComponent} from './related-sites/related-sites.component';
     UnderDevelopmentComponent,
     LoadingComponent,
     RelatedSitesComponent,
+    CsMonitoringComponent,
+    LanMapComponent,
   ],
   imports: [
     HttpClientModule,
