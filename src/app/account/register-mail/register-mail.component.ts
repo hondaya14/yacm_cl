@@ -25,7 +25,6 @@ export class RegisterMailComponent implements OnInit {
   register() {
     this.infoInvalid = !this.mail.checkInfo();
     if (this.infoInvalid) return
-    this.accountService.registerCS(JSON.stringify(this.mail)).subscribe(result => console.log(result));
   }
 }
 

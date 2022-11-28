@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AccountService} from "../account.service";
 import {FormControl, Validators} from "@angular/forms";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -13,7 +14,7 @@ export class RegisterCsComponent implements OnInit {
   infoInvalid: boolean = false;
   hide: boolean = true;
 
-  constructor(private accountService: AccountService) {
+  constructor(private accountService: AccountService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -24,12 +25,11 @@ export class RegisterCsComponent implements OnInit {
     console.log(JSON.stringify(this.ldap));
   }
 
-  register() {
+  async register() {
     this.infoInvalid = this.ldap.invalidLdapForms();
     if (this.infoInvalid) return
-    this.accountService.registerCS(this.ldap.jsonify()).subscribe(result => console.log(result));
-    // console.log('post: ' + url + '\nbody:' + '\n' + JSON.stringify(this.ldap), option);
-    // this.http.post(url, JSON.stringify(this.ldap));
+    await this.accountService.registerCS(this.ldap.jsonify());
+    await this.router.navigateByUrl('/account/register-result');
   }
 }
 

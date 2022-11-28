@@ -29,8 +29,10 @@ import {LoadingComponent} from './components/loading/loading.component';
 import {LoadingService} from "./components/loading/loading.service";
 import {LoadingInterceptor} from "./components/loading/loading.interceptor";
 import {RelatedSitesComponent} from './related-sites/related-sites.component';
-import { CsMonitoringComponent } from './cs-monitoring/cs-monitoring.component';
-import { LanMapComponent } from './lan-map/lan-map.component';
+import {CsMonitoringComponent} from './cs-monitoring/cs-monitoring.component';
+import {LanMapComponent} from './lan-map/lan-map.component';
+import {ResultComponent} from './account/register-cs/result/result.component';
+import {AccountService} from "./account/account.service";
 
 // @ts-ignore
 @NgModule({
@@ -47,6 +49,7 @@ import { LanMapComponent } from './lan-map/lan-map.component';
     RelatedSitesComponent,
     CsMonitoringComponent,
     LanMapComponent,
+    ResultComponent,
   ],
   imports: [
     HttpClientModule,
@@ -70,6 +73,7 @@ import { LanMapComponent } from './lan-map/lan-map.component';
     MatProgressSpinnerModule,
   ],
   providers: [
+    AccountService,
     LoadingService,
     {
       provide: HTTP_INTERCEPTORS,

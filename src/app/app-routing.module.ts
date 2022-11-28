@@ -10,12 +10,14 @@ import {UnderDevelopmentComponent} from "./under-development/under-development.c
 import {RelatedSitesComponent} from "./related-sites/related-sites.component";
 import {CsMonitoringComponent} from "./cs-monitoring/cs-monitoring.component";
 import {LanMapComponent} from "./lan-map/lan-map.component";
+import {ResultComponent} from "./account/register-cs/result/result.component";
 
 const routes: Routes = [
   // Routes
   {path: 'home', component: HomeComponent},
   {path: 'account', component: AccountComponent},
   {path: 'account/register_cs', component: RegisterCsComponent},
+  {path: 'account/register-result', component: ResultComponent},
   {path: 'account/register_mail', component: RegisterMailComponent},
   {path: 'cs-monitoring', component: CsMonitoringComponent},
   {path: 'lan-map', component: LanMapComponent},
