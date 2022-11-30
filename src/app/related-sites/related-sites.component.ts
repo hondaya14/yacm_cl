@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-related-sites',
@@ -7,9 +8,8 @@ import {Component, OnInit} from '@angular/core';
 })
 export class RelatedSitesComponent implements OnInit {
 
-  icon = "<span class=\"material-symbols-outlined\">open_in_new</span>"
-
-  constructor() {
+  constructor(title: Title) {
+    title.setTitle('Actyn - Related sites');
   }
 
   ngOnInit(): void {

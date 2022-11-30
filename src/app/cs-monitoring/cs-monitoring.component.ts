@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-cs-monitoring',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CsMonitoringComponent implements OnInit {
 
-  constructor() { }
+  constructor(title: Title) {
+    title.setTitle('Actyn - CS Monitoring');
+  }
 
   ngOnInit(): void {
   }

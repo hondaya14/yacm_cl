@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-under-development',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UnderDevelopmentComponent implements OnInit {
 
-  constructor() { }
+  constructor(title: Title) {
+    title.setTitle('Actyn - UD');
+  }
 
   ngOnInit(): void {
   }
